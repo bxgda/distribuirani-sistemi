@@ -1,0 +1,5 @@
+U .NET-u, koristeći gRPC, kreirati servis koji omogućava klijentima da pozovu sledeće procedure:
+
+	a. proceduru koja omogućava prosleđivanje celobrojnog podatka. Svaki parni poziv procedure rezultuje dodavanjem prosleđenog argumenta promenljivoj acc definisanoj unutar servisa, dok svaki neparni poziv rezultuje oduzimanjem argumenta od promenljive acc i rezultat operacije smešta u promenljivu acc. Procedura nema povratni tip.
+
+	b. proceduru koja prihvata tok celobrojnih podataka, svaki treći element toka sabira promenljivom acc, dok od ostalih elemenata toka oduzima vrednost smeštenu u promenljivu acc, i vraća tako modifikovani tok klijentu.
