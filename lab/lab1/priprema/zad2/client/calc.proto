@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "Zad2_Client";
+
+package calc;
+
+
+message NumberRequest {
+  int32 value = 1;
+}
+
+message NumberResponse {
+  int32 value = 1;
+}
+
+
+message Empty {}
+
+
+service CalcService {
+  rpc AddAverage (NumberRequest) returns (Empty);
+  rpc ProcessStream(stream NumberRequest) returns (stream NumberResponse);
+}
