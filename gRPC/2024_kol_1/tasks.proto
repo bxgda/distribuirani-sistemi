@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpc2026";
+
+package tasks;
+
+service Tasks {
+    rpc AddTask(ZadatakBezId) returns (TaskReply);
+    rpc ListTasks(Empty) returns (TaskList); 
+    rpc MarkTaskAsCompleted(TaskId) returns (TaskReply);
+}
+
+message Zadatak {
+    int32 id = 1;
+    string tekstZadatka = 2;
+    bool completed = 3;
+}
+
+message ZadatakBezId {
+    string tekstZadatka = 1;
+}
+
+message TaskReply {
+    string message = 1;
+}
+
+message TaskList {
+    repeated Zadatak tasks = 1;
+}
+
+message TaskId {
+    int32 id = 1;
+}
+
+message Empty {}
