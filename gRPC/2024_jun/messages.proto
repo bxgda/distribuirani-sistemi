@@ -1,0 +1,31 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "grpc2026";
+
+package messages;
+
+service Poruke {
+    rpc SendMessage(PorukaRequest) returns (google.protobuf.Empty);
+    rpc DeleteMessage(PorukaId) returns (PorukaStatus);
+    rpc ListMessages(google.protobuf.Empty) returns (stream Poruka);
+}
+
+message PorukaRequest {
+    string tekst = 1;
+}
+
+message Poruka {
+    int32 id = 1;
+    string tekst = 2;
+}
+
+message PorukaId {
+    int32 id = 1;
+}
+
+message PorukaStatus {
+    bool status = 1;
+    string povratnaPoruka = 2;
+}
+
