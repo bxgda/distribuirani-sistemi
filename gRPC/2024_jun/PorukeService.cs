@@ -11,7 +11,7 @@ using grpc2026;
 		- DeleteMessage: briše poruku sa zadatim ID-jem.
 		- ListMessages: Dobije tok podataka koji sadrži sve poruke.
 	Implementirati gRPC server definisan u message.proto fajlu.
-
+ 
 */
 
 /*
