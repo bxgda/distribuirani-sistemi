@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "grpc2026";
+
+package okt2;
+
+service Okt2 {
+  rpc JeKvadrat(stream Payload) returns (stream google.protobuf.StringValue);
+}
+
+message Payload {
+  uint32 a = 1;
+  uint32 b = 2;
+}
